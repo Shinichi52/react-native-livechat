@@ -61,7 +61,7 @@ export default class Chat extends React.Component {
 						inverted={false}
 						messages={messages}
 						scrollToBottom
-						// renderFooter={this.renderFooter}
+						renderFooter={this.renderFooter}
 						onSend={this.handleSend}
 						onInputTextChanged={onInputChange}
 						user={customer}
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
 		width,
 		height: '100%',
 		position: 'absolute',
-		zIndex: 999,
 		top: 0,
 		left: 0,
 		flexDirection: 'column',
