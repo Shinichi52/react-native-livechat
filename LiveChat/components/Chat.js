@@ -54,8 +54,8 @@ export default class Chat extends React.Component {
 						this.chat = ref
 					}}
 				>
-					<NavigationBar chatTitle={chatTitle} closeChat={closeChat} />
-					{isReconnecting && <Text style={styles.connectionStatus}>Reconnecting...</Text>}
+					{/* <NavigationBar chatTitle={chatTitle} closeChat={closeChat} /> */}
+					{isReconnecting && <Text style={styles.connectionStatus}>Connecting...</Text>}
 					{headerText && <Text style={styles.status}>{headerText}</Text>}
 					<GiftedChat
 						inverted={false}
