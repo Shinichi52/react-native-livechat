@@ -54,14 +54,14 @@ export default class Chat extends React.Component {
 						this.chat = ref
 					}}
 				>
-					<NavigationBar chatTitle={chatTitle} closeChat={closeChat} />
-					{isReconnecting && <Text style={styles.connectionStatus}>Reconnecting...</Text>}
+					{/* <NavigationBar chatTitle={chatTitle} closeChat={closeChat} /> */}
+					{isReconnecting && <Text style={styles.connectionStatus}>Connecting...</Text>}
 					{headerText && <Text style={styles.status}>{headerText}</Text>}
 					<GiftedChat
 						inverted={false}
 						messages={messages}
 						scrollToBottom
-						renderFooter={this.renderFooter}
+						// renderFooter={this.renderFooter}
 						onSend={this.handleSend}
 						onInputTextChanged={onInputChange}
 						user={customer}
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
 		width,
 		height: '100%',
 		position: 'absolute',
+		zIndex: 999,
 		top: 0,
 		left: 0,
 		flexDirection: 'column',
