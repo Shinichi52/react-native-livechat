@@ -18,12 +18,13 @@ export default class LiveChat extends Component {
 		this.defineStyles()
 
 		this.state = {
-			isChatOn: false,
+			isChatOn: true,
 			protocol: 'lc2',
 			messages: [],
 			users: {},
 			queued: false,
 			queueData: {},
+			// customerData: props.customerData,
 			isTyping: false,
 			onlineStatus: false,
 			connectionState: 'not_connected',
@@ -352,6 +353,7 @@ export default class LiveChat extends Component {
 				connectionState: 'connected',
 				onlineStatus: availability === 'online',
 			})
+			customerSDK.updateCustomer(this.props.customerData);
 			customerSDK.listChats().then((data) => {
 				const { chatsSummary, totalChats } = data
 				if (totalChats) {
@@ -504,6 +506,7 @@ LiveChat.propTypes = {
 	onLoaded: PropTypes.func,
 	clientId: PropTypes.string,
 	redirectUri: PropTypes.string,
+	customerData: PropTypes.object
 }
 
 LiveChat.defaultProps = {
